@@ -1,0 +1,3 @@
+#!/bin/sh
+echo 'scan' | cec-client -t p -p 1 -d 1 -s | sed -n '/^device.*TV$/,/^$/p' | egrep '^power status: +on$' > /dev/null 2>&1
+exit $?;
